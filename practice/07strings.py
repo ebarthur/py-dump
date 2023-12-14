@@ -107,3 +107,12 @@ print(pet.startswith('c')) # False
 # Endswith -- Returns true if the string ends with the specified value
 print(pet.endswith('a')) # True
 print(pet.endswith('u')) # False
+
+#Example
+file_name = 'code.py'
+print(file_name.endswith('.py')) # True
+
+
+
+
+
