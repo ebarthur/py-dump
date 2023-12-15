@@ -1,17 +1,38 @@
 # Python conditional statement if else elif
 voting_age = 18
-age = int(input('Enter your age: '))
-          
-if age >= voting_age:
-    print('You are qualified to vote')
-    
-elif age < voting_age:
-    print('You are not qualified to vote')
+age = (input('Enter your age: '))
+
+if age.isnumeric():          
+    if int(age) >= voting_age:
+        print('You are qualified to vote')
+        
+    elif int(age) < voting_age:
+        print('You are not qualified to vote')
+
+else:
+    print('Invalid input\nTry again')
 
 
 # EXERCISE
 
 # Program takes two inputs and checks which of the inputs is greater
+message = input("This program takes two values and checks which one is greater\nPress 's'to start: ").lower()
+
+if message == 's':
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    if num1 > num2:
+        print(f'{num1} is greater than {num2}')
+
+    elif num1 < num2:
+        print(f'{num2} is greater than {num1}')
+
+    else:
+        print(f'{num1} is equal to {num2}')      
+
+else:
+    exit()
 
 # Check Odd or Even numbers
 
