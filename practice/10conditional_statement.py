@@ -1,4 +1,12 @@
 # Python conditional statement if else elif
+voting_age = 18
+age = int(input('Enter your age: '))
+          
+if age >= voting_age:
+    print('You are qualified to vote')
+    
+elif age < voting_age:
+    print('You are not qualified to vote')
 
 
 # EXERCISE
