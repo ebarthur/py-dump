@@ -16,9 +16,9 @@ else:
 # EXERCISE
 
 # Program takes two inputs and checks which of the inputs is greater
-message = input("This program takes two values and checks which one is greater\nPress 's'to start: ").lower()
+rule = input("THIS PROGRAM TAKES TWO VALUES AND CHECKS WHICH ONE IS GREATER\nPress 's'to start: ").lower()
 
-if message == 's':
+if rule == 's':
     num1 = int(input("Enter first number: "))
     num2 = int(input("Enter second number: "))
 
