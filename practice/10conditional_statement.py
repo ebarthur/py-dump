@@ -16,7 +16,7 @@ else:
 # EXERCISE
 
 # Program takes two inputs and checks which of the inputs is greater
-rule = input("THIS PROGRAM TAKES TWO VALUES AND CHECKS WHICH ONE IS GREATER\nPress 's'to start: ").lower()
+rule = input("THIS PROGRAM TAKES TWO VALUES AND CHECKS WHICH ONE IS GREATER\nPress 'S' to start: ").lower()
 
 if rule == 's':
     num1 = int(input("Enter first number: "))
