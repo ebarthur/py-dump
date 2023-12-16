@@ -1,8 +1,13 @@
 # Python list is a collection which is ordered and mutable.
 # It allows duplicate members
 
+countries = []
 
-# len fucntion
+print(countries)
+print(type(countries))
+
+
+# len function
 
 # LIST METHODS
 # Append -- Adds an element at the end of the list
