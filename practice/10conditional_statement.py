@@ -37,10 +37,18 @@ def repeat():
         if go_again == 'y':
             repeat()
 
-        else: 
-            to_exit = input('Press (E) to exit: ').lower()
+        elif go_again == 'n':
+            to_exit = input('Press (E) or any key to exit: ').lower()
             if to_exit == 'e':
                 exit()
+            
+            else:
+                exit()
+            
+        
+        else:
+            print('Invalid input')
+            break
                                     
 repeat()                        
 
