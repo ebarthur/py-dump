@@ -13,7 +13,8 @@ attributes: length, width
 of a plot of land
 - f. Create an object from the class and assign 40 and 30 for its length and 
 width respectively
-- `Hints.`
+
+## `Hints.`
 - All methods take self as its first and default parameter
 - Import the sqrt method from the math module
 
