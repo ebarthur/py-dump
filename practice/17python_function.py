@@ -43,5 +43,13 @@ def myFunction(**kwargs):
 myFunction(name = 'Awal', age = 20)
 
 
+# -----------------------------------------
 
+def myFunction(name):
+    '''
+    This function returns the name passed in as an argument
+    '''
+    statement = f'My name is {name}'
+    return statement
 
+print(myFunction('Jeffery Wellington')) # My name is Jeffery Wellington
