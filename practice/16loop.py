@@ -51,6 +51,7 @@ for z in range(0, 101, 4):
 # Exercise
 # 1. Find all the even numbers in a range
 # 2. Find the sum of all elements in a list
+# 3. Find the factorial of a number
 
 # 1
 for even_numbers in range(0, 21, 2):    
@@ -64,3 +65,27 @@ total = 0
 for i in prime:
     total += i
 print(total)    # 81
+
+# 3
+import math
+x = int(input('This function returns the factorial of any number\nEnter number: '))
+
+print(math.factorial(x))
+
+# While loops
+limit = 3
+count = 0
+
+while count < limit:
+    data = input('Enter your number: ')
+    if data.isnumeric():
+        print(f'{data} is numeric')
+        break
+    
+    else:
+        if count < 1:
+            print('Wrong input')
+            
+        elif count == 1:
+            print('Wrong input. This is your last chance')
+    count += 1
