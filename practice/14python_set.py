@@ -34,4 +34,4 @@ print(second_score.difference(first_score)) # {80, 20, 70}
 # This prints out every element in the second_score set that is not in the first_score set
 
 first_score.add(10)
-print(first_score)
+print(first_score) # {40, 50, 10, 30}
