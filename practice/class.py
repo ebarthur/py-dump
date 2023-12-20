@@ -14,9 +14,9 @@ class BakingPan:
         self.special_ingredient = special_ingredient
         
     def bread_name(self):
-            return f'{self.unit_price}'
+            return f'{self.unit_price} pieces of {self.special_ingredient} bread'
         
-bread1 = BakingPan('Soft', 20, 'Wheat')
+bread1 = BakingPan('Soft', 20, 'Wheat') 
 bread2 = BakingPan('Hard', 10, 'Banana')
 
 print(bread1.sugar) # 20
@@ -24,4 +24,5 @@ print(bread1.flour) # Soft
 print(bread1.special_ingredient) # Wheat
     
 print(bread2.special_ingredient) # Banana
-print(bread1.bread_name())
+print(bread1.bread_name()) # 5 pieces of Wheat bread
+print(bread2.bread_name()) #
