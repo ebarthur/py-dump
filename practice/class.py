@@ -19,7 +19,7 @@ class BakingPan:
         
     def total_price(self, quantity):
         total = quantity * self.unit_price
-        return f'Total Price = GHC{total}'
+        return f'Total Price of {self.unit_price} pieces of {self.special_ingredient} bread = GHC {total}'
     
 bread1 = BakingPan('Soft', 20, 'Wheat') 
 bread2 = BakingPan('Hard', 10, 'Banana')
@@ -32,4 +32,4 @@ print(bread2.special_ingredient) # Banana
 print(bread1.bread_name()) # 5 pieces of Wheat bread
 print(bread2.bread_name()) # 5 pieces of Banana bread
 
-print(bread1.total_price(16))
+print(bread1.total_price(16)) # Total Price of 5 pieces of Wheat bread = GHC 80
