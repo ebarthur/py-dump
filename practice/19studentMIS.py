@@ -59,7 +59,10 @@ class Student(Person):
             self.courses.remove(course_title)
         
     def printCourses(self):
-        return self.courses
+        print(f'{self.fullName()} has registered {len(self.courses)} courses:')
+        print('-'*40)
+        for courses in self.courses:  
+            print(courses)
         
  
 student1 = Student('Devin', 'Weston', 19,'Pent', ['Discrete Math', 'DSA', 'Digital Circuit', 'Algebra'])
@@ -89,10 +92,13 @@ print(student2.courses) # ['Thermodynamics', 'African Art']
 student1.dropCourse('Digital Circuit')
 print(student1.courses) # ['Discrete Math', 'DSA', 'Algebra', 'Anatomy']
 
-print(student1.printCourses()) # ['Discrete Math', 'DSA', 'Algebra', 'Anatomy']
-print(student2.printCourses()) # ['Thermodynamics', 'Biochemistry', 'African Art']
-print(student3.printCourses()) # None
-
+(student1.printCourses()) 
+# Devin Weston has registered 4 courses:
+# ----------------------------------------
+# Discrete Math
+# DSA
+# Algebra
+# Anatomy
 
 # Magic Methods
 # Overwrite string method
