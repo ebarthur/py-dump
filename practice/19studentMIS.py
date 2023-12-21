@@ -54,8 +54,9 @@ class Student(Person):
         if course_title not in self.courses:
             self.courses.append(course_title)
         
-    def dropCourse(self, course_index):
-        self.courses.pop(course_index)
+    def dropCourse(self, course_title):
+        if course_title in self.courses:
+            self.courses.remove(course_title)
         
     def printCourses(self):
         return self.courses
@@ -79,16 +80,13 @@ deleting a course and printing registered courses respectively
 a student will perform on the Student MIS 
 
 """
-student2.courses.append('Calculus')
-print(student2.courses) # ['Thermodynamics', 'Biochemistry', 'African Art', 'Calculus']
-
 student1.addCourse('Anatomy')
 print(student1.courses) # ['Discrete Math', 'DSA', 'Digital Circuit', 'Algebra', 'Anatomy']
 
-student2.dropCourse(-1)
-print(student2.courses) # ['Thermodynamics', 'Biochemistry', 'African Art']
+student2.dropCourse('Biochemistry')
+print(student2.courses) # ['Thermodynamics', 'African Art']
 
-student1.dropCourse(2)
+student1.dropCourse('Digital Circuit')
 print(student1.courses) # ['Discrete Math', 'DSA', 'Algebra', 'Anatomy']
 
 print(student1.printCourses()) # ['Discrete Math', 'DSA', 'Algebra', 'Anatomy']
