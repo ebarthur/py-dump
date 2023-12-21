@@ -41,7 +41,7 @@ print(person2.initials()) # H.J
 # 2. Define extra attributes for student, such as hall of residence and courses
 # 3. Create a student object from the Student class
 
-class Student(Person):
+class Student(Person):  # Inheritence
     def __init__(self, firstName, lastName, age, residence, courses=None):
         super().__init__(firstName, lastName, age)
         self.residence = residence
@@ -61,7 +61,7 @@ class Student(Person):
     def printCourses(self):
         print(f'{self.fullName()} has registered {len(self.courses)} courses:')
         print('-'*40)
-        for courses in self.courses:  
+        for courses in self.courses:
             print(courses)
         
  
