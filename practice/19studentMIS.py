@@ -42,10 +42,24 @@ print(person2.initials()) # H.J
 # 3. Create a student object from the Student class
 
 class Student(Person):
-    def __init__(self, firstName, lastName, age):
+    def __init__(self, firstName, lastName, age, residence, courses=None):
         super().__init__(firstName, lastName, age)
+        self.residence = residence
+        self.residence = f'{self.residence} Hall' 
+        if courses == None:
+            self.courses = []
+        self.courses = courses
         
+ 
+student1 = Student('Devin', 'Weston', 19,'Pent', ['Discrete Math', 'DSA', 'Digital Circuit', 'Algebra'])
+student2 = Student('Sam', 'Friedman', 21, 'Akuafo',['Thermodynamics', 'Biochemistry', 'African Art'])
+student3 = Student('Ava', 'Jacobs', 20, 'Evandy')
+
         
+print(student1.studentMail()) # d.weston@st.ug.edu.gh
+print(student2.residence) # Akuafo Hall
+print(student1.courses) # ['Discrete Math', 'DSA', 'Digital Circuit', 'Algebra']
+print(student3.courses) # None
     
 
 """
