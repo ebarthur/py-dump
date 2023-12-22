@@ -8,6 +8,8 @@ class Colors:
     RED = "\033[91m"
     GREEN = "\033[92m"
     YELLOW = "\033[93m"
+    BLUE = "\033[94m"
+    MAGENTA = "\033[95m"
     CYAN = "\033[96m"
 
 # Global variable for high score
@@ -44,8 +46,8 @@ def fibonacci(n):
 
 # Function to display the game introduction
 def display_intro():
-    type_text("Welcome to the Infinite Fibonacci Room Adventure Game!", color=Colors.BOLD)
-    type_text("The goal is to reach the end with the highest possible score.", color=Colors.BOLD)
+    type_text("Welcome to the Exciting Room Escape Adventure!", color=Colors.BOLD)
+    type_text("Your goal is to navigate through rooms and escape with the treasure.", color=Colors.BOLD)
     type_text(''*4)
     print(f"You start in Room 1 with 0 points.")
     type_text(f"Current High Score: {high_score}", color=Colors.CYAN)
@@ -68,7 +70,7 @@ def play_game(difficulty):
         # Introduce a chance of discovering a hidden room based on difficulty
         if random.random() <= params['hidden_room_chance']:
             hidden_points = random.randint(*params['bonus_points_range'])
-            print(f"You discovered a hidden room and earned {hidden_points} bonus points!", color=Colors.GREEN)
+            type_text(f"You discovered a hidden room and earned {hidden_points} bonus points!", color=Colors.GREEN)
             total_points += hidden_points
 
         # Randomize the order of doors
@@ -78,7 +80,7 @@ def play_game(difficulty):
         print(f"You see two doors in front of you:")
         print('-'*40)
         time.sleep(0.75)
-        type_text(f"Door leading to the next Fibonacci room", color=Colors.GREEN)
+        type_text(f"Door leading to the next room", color=Colors.BLUE)
         print()
         type_text(f"Danger! Door that might end your journey", color=Colors.RED)
         print('-'*40)
@@ -132,7 +134,9 @@ def main():
         if not play_again():
             exit_choice = type_text("Press 'e' to exit or any other key to play again: ", input_prompt=True).lower()
             if exit_choice == 'e':
-                print("\nThanks for playing! Goodbye!")
+                time.sleep(0.5)
+                type_text("\nThanks for playing! Goodbye!")
+                time.sleep(2)
                 break
             else:
                 print("\nLet's play again!")
