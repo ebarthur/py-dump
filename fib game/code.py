@@ -1,4 +1,3 @@
-# Import necessary libraries
 import random
 import time
 
@@ -13,6 +12,13 @@ class Colors:
 
 # Global variable for high score
 high_score = 0
+
+# Define difficulty levels
+difficulty_levels = {
+    'easy': {'hidden_room_chance': 0.1, 'bonus_points_range': (5, 15)},
+    'medium': {'hidden_room_chance': 0.2, 'bonus_points_range': (10, 20)},
+    'hard': {'hidden_room_chance': 0.3, 'bonus_points_range': (15, 25)}
+}
 
 # Function to print text with optional typing effect
 def type_text(text, delay=0.03, input_prompt=False, color=Colors.RESET):
@@ -45,10 +51,13 @@ def display_intro():
     type_text(f"Current High Score: {high_score}", color=Colors.CYAN)
 
 # Function to play the main game
-def play_game():
+def play_game(difficulty):
     global high_score  # Access the global high score variable
     current_room = 1
     total_points = 0
+
+    # Get difficulty parameters
+    params = difficulty_levels.get(difficulty, difficulty_levels['medium'])
 
     # Main game loop
     while True:
@@ -56,9 +65,9 @@ def play_game():
         print(f"\nCurrent Room: {current_room}")
         print(f"Total Points: {total_points}")
 
-        # Introduce a chance of discovering a hidden room
-        if random.randint(1, 10) == 1:
-            hidden_points = random.randint(5, 20)
+        # Introduce a chance of discovering a hidden room based on difficulty
+        if random.random() <= params['hidden_room_chance']:
+            hidden_points = random.randint(*params['bonus_points_range'])
             print(f"You discovered a hidden room and earned {hidden_points} bonus points!", color=Colors.GREEN)
             total_points += hidden_points
 
@@ -110,7 +119,15 @@ def play_again():
 def main():
     while True:
         display_intro()
-        play_game()
+
+        # Ask for difficulty level
+        difficulty = type_text("Choose a difficulty level (easy/medium/hard): ", input_prompt=True).lower()
+
+        # Validate the difficulty level
+        if difficulty not in difficulty_levels:
+            print("Invalid difficulty level. Defaulting to medium.")
+
+        play_game(difficulty)
 
         if not play_again():
             exit_choice = type_text("Press 'e' to exit or any other key to play again: ", input_prompt=True).lower()
