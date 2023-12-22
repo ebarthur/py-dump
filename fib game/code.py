@@ -2,15 +2,24 @@
 import random
 import time
 
+# ANSI color codes for better visualization
+class Colors:
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
+    RED = "\033[91m"
+    GREEN = "\033[92m"
+    YELLOW = "\033[93m"
+    CYAN = "\033[96m"
+
 # Global variable for high score
 high_score = 0
 
 # Function to print text with optional typing effect
-def type_text(text, delay=0.03, input_prompt=False):
+def type_text(text, delay=0.03, input_prompt=False, color=Colors.RESET):
     for char in text:
-        print(char, end='', flush=True)
+        print(color + char, end='', flush=True)
         time.sleep(delay)
-    print()
+    print(Colors.RESET)
 
     if input_prompt:
         return input()
@@ -29,11 +38,11 @@ def fibonacci(n):
 
 # Function to display the game introduction
 def display_intro():
-    type_text("Welcome to the Infinite Fibonacci Room Adventure Game!")
-    type_text("The goal is to reach the end with the highest possible score.")
+    type_text("Welcome to the Infinite Fibonacci Room Adventure Game!", color=Colors.BOLD)
+    type_text("The goal is to reach the end with the highest possible score.", color=Colors.BOLD)
     type_text(''*4)
     print(f"You start in Room 1 with 0 points.")
-    type_text(f"Current High Score: {high_score}")
+    type_text(f"Current High Score: {high_score}", color=Colors.CYAN)
 
 # Function to play the main game
 def play_game():
@@ -50,7 +59,7 @@ def play_game():
         # Introduce a chance of discovering a hidden room
         if random.randint(1, 10) == 1:
             hidden_points = random.randint(5, 20)
-            print(f"You discovered a hidden room and earned {hidden_points} bonus points!")
+            print(f"You discovered a hidden room and earned {hidden_points} bonus points!", color=Colors.GREEN)
             total_points += hidden_points
 
         # Randomize the order of doors
@@ -60,9 +69,9 @@ def play_game():
         print(f"You see two doors in front of you:")
         print('-'*40)
         time.sleep(0.75)
-        type_text(f"Door leading to the next Fibonacci room")
+        type_text(f"Door leading to the next Fibonacci room", color=Colors.GREEN)
         print()
-        type_text(f"Danger! Door that might end your journey")
+        type_text(f"Danger! Door that might end your journey", color=Colors.RED)
         print('-'*40)
         time.sleep(1)
         choice = type_text("Choose a door (1 or 2): ", input_prompt=True)
@@ -70,19 +79,19 @@ def play_game():
         if choice == str(doors[0]):
             # Earn points based on the Fibonacci sequence
             points_earned = fibonacci(current_room)
-            type_text(f"\nYou earned {points_earned} points in this room.")
+            type_text(f"\nYou earned {points_earned} points in this room.", color=Colors.YELLOW)
             total_points += points_earned
             current_room += 1
         elif choice == str(doors[1]):
-            type_text("\nOh no! You chose the dangerous door, and your journey ends here.")
+            type_text("\nOh no! You chose the dangerous door, and your journey ends here.", color=Colors.RED)
             type_text(f"You earned a total of {total_points} points.")
 
             # Check if the player beat the high score
             if total_points > high_score:
                 high_score = total_points
-                type_text(f"Congratulations! You've set a new high score: {high_score} points.")
+                type_text(f"Congratulations! You've set a new high score: {high_score} points.", color=Colors.GREEN)
             else:
-                type_text("Better luck next time!")
+                type_text("Better luck next time!", color=Colors.RED)
 
             break
         else:
