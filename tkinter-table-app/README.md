@@ -17,7 +17,7 @@ Clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/ebarthur/tkinter-table-app.git
-
+````
 
 Navigate to the project directory:
 
