@@ -51,4 +51,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ```
 
-Make sure to customize the sections such as "Installation," "Usage," and "Contributing" based on the specific details of your project. Also, replace the placeholder URLs and paths with the actual URLs and paths relevant to your repository.
