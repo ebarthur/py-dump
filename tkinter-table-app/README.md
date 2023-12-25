@@ -1,6 +1,4 @@
-Certainly! Here's a basic README.md file for your Tkinter code:
 
-```markdown
 # Tkinter Table Application
 
 This is a simple Tkinter application that demonstrates how to create a table using the `ttk.Treeview` widget with scroll bars for displaying production information. The application includes a basic structure with headings and scrollable rows.
@@ -19,7 +17,7 @@ Clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/ebarthur/tkinter-table-app.git
-```
+
 
 Navigate to the project directory:
 
