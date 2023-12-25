@@ -34,7 +34,7 @@ class GroceryStore:
             "Stock Quantity", "Supplier", "Expiry Date", "Discount", "Location",
         )
         self.table["columns"] = columns
-        
+
         # Add column headings
         for col in columns:
             self.table.heading(col, text=col, anchor=tk.CENTER)
@@ -44,10 +44,10 @@ class GroceryStore:
         # Display headings
         self.table["show"] = "headings"
 
-        # Place table and scroll bars
-        self.table.place(x=5, y=10, width=970, height=400)
-        self.xscroll.place(x=10, y=410, width=980, height=20)
-        self.yscroll.place(x=975, y=10, width=20, height=400)
+        # Place table and scroll bars to fill the entire window
+        self.table.pack(fill="both", expand=True)
+        self.xscroll.pack(side="bottom", fill="x")
+        self.yscroll.pack(side="right", fill="y")
 
     def populate_table(self):
         # Create count variable for striped rows
@@ -70,7 +70,6 @@ class GroceryStore:
             ("108", "Yogurt", "Dairy", "Yoplait", "$1.75", "60", "DairyCo", "2023-01-25", "5%", "Refrigerated Section"),
             ("109", "Pasta", "Pantry", "Barilla", "$1.49", "90", "Pasta Paradise", "2023-01-14", "10%", "Aisle 4"),
             ("110", "Apples", "Fruits", "Washington Apples", "$1.29", "70", "Local Farms", "2023-01-09", "3%", "Produce Section"),
-            # 10 more rows of data
             ("111", "Orange Juice", "Beverages", "Tropicana", "$2.99", "40", "Juice Co.", "2023-01-25", "0%", "Beverage Section"),
             ("112", "Potatoes", "Vegetables", "Idaho Potatoes", "$0.89", "60", "Local Farms", "2023-01-15", "2%", "Produce Section"),
             ("113", "Cheese", "Dairy", "Kraft", "$3.29", "25", "DairyCo", "2023-01-30", "5%", "Refrigerated Section"),
@@ -109,4 +108,5 @@ class GroceryStore:
 if __name__ == "__main__":
     root = tk.Tk()
     app = GroceryStore(root)
+    root.geometry("1000x500")  # Set the initial size of the window
     root.mainloop()
