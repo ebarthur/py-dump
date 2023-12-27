@@ -1,6 +1,4 @@
-# Python Code Practice Repository
-
-Welcome to my Python Code Practice repository! This repository serves as a space for me to practice and showcase various Python code snippets, exercises, and projects as I enhance my programming skills.
+# Python Practice Area
 
 ## Table of Contents
 
@@ -28,7 +26,7 @@ Feel free to explore the code and use it as a reference for your own learning. I
 1. **Clone the Repository:**
 
     ```bash
-    git clone git@github.com:ebarthur/python-exercises.git
+    git clone git@github.com:ebarthur/py-dump.git
     ```
 
 2. **Explore the Code:**
