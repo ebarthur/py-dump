@@ -44,7 +44,6 @@ def fibonacci(n):
             a, b = b, a + b
         return b
 
-# Function to display the game introduction
 def display_intro():
     type_text("Welcome to the Exciting Room Escape Adventure!", color=Colors.BOLD)
     type_text("Your goal is to navigate through rooms and escape with the treasure.", color=Colors.BOLD)
@@ -141,6 +140,5 @@ def main():
             else:
                 print("\nLet's play again!")
 
-# Execute the main function if this script is run
 if __name__ == "__main__":
     main()
