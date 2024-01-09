@@ -1,4 +1,4 @@
-# Write a funciton to print out the factorials of a number
+# Write a function to print out the factorials of a number
 
 def factorial(n):
     if n == 0:
