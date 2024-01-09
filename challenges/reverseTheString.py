@@ -1,5 +1,5 @@
 # Write a function to reverse the string
-# The input string is given as an aray of s
+# The input string is given as an array of s
 def reverse(s):
     l = 0
     r = len(s) - 1
