@@ -4,7 +4,7 @@ def sumAll(nums):
     if not nums:
         return 0
     
-    #Using Recursion
+    # Using Recursion
     return nums[0] + sumAll(nums[1:])
 
 
